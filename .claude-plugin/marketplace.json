@@ -1,0 +1,14 @@
+{
+  "name": "ruditor",
+  "owner": {
+    "name": "CoutinhoGy"
+  },
+  "description": "Ferramentas fiscais do Ruditor para agentes de IA (acesso por token).",
+  "plugins": [
+    {
+      "name": "ruditor",
+      "source": "./",
+      "description": "Ferramentas fiscais do Ruditor por MCP remoto + a skill do Ruditor Arc 1.0."
+    }
+  ]
+}

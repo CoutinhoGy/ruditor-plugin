@@ -1,0 +1,24 @@
+{
+  "name": "ruditor",
+  "version": "1.0.0",
+  "description": "As 24 ferramentas fiscais do Ruditor (ICMS das 27 UFs, IPI, PIS/COFINS, II, IBS/CBS, IS, NCM/CEST/CFOP/CST) por MCP remoto, com a skill de como o Ruditor Arc 1.0 interpreta, audita e decide. Exige token emitido pelo dono do Ruditor.",
+  "author": { "name": "CoutinhoGy" },
+  "repository": "https://github.com/CoutinhoGy/ruditor-plugin",
+  "keywords": ["tributario", "icms", "ncm", "sped", "mcp"],
+  "userConfig": {
+    "token": {
+      "type": "string",
+      "title": "Token do Ruditor",
+      "description": "Token pessoal emitido pelo dono do Ruditor. Vale até 15 dias; vencido, peça outro.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "ruditor": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bin/ruditor.mjs", "mcp"],
+      "env": { "RUDITOR_TOKEN": "${user_config.token}" }
+    }
+  }
+}
